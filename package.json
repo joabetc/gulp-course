@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/joabetc/gulp-course/issues"
   },
-  "homepage": "https://github.com/joabetc/gulp-course#readme"
+  "homepage": "https://github.com/joabetc/gulp-course#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
