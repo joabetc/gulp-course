@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean');
 
 gulp.task('copy', ['clean'], function() {
-    gulp.src('src/**/*')
+    return gulp.src('src/**/*')
         .pipe(gulp.dest('dist'));
 });
     
@@ -12,7 +12,7 @@ gulp.task('clean', function() {
         .pipe(clean());
 });
 
-gulp.task('build-img', function() {
+gulp.task('build-img', ['copy'], function() {
     gulp.src('dist/img/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'));
