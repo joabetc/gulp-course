@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     usemin = require('gulp-usemin'),
     cssmin = require('gulp-cssmin'),
     browserSync = require('browser-sync'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    jshintStylish = require('jshint-stylish');
 
 gulp.task('default', ['copy'], function() {
     gulp.start('build-img', 'usemin');
@@ -47,7 +48,7 @@ gulp.task('server', function() {
     gulp.watch('src/**/*').on('change', function(event) {
         gulp.src(event.path)
             .pipe(jshint())
-            .pipe(jshint.reporter());
+            .pipe(jshint.reporter(jshintStylish));
     });
     gulp.watch('src/**/*').on('change', browserSync.reload);
 });
