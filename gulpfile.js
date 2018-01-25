@@ -60,7 +60,10 @@ gulp.task('server', function() {
     });
     gulp.watch('src/**/*.less').on('change', function(event) {
         gulp.src(event.path)
-            .pipe(less())
+            .pipe(less().on('error', function(error) {
+                console.log('Problema na compilação');
+                console.log(error.message);
+            }))
             .pipe(gulp.dest('src/css'));
     });
     gulp.watch('src/**/*').on('change', browserSync.reload);
