@@ -21,7 +21,10 @@ gulp.task('build-img', ['copy'], function() {
 });
 
 gulp.task('build-js', function() {
-    gulp.src('dist/js/**/*.js')
+    gulp.src([
+            'dist/js/jquery.js', 
+            'dist/js/home.js', 
+            'dist/js/produto.js'])
         .pipe(concat('all.js'))
         .pipe('dist/js');
 });
