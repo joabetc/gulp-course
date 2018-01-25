@@ -1,5 +1,3 @@
-import { request } from 'https';
-
 var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean'),
@@ -31,7 +29,7 @@ gulp.task('build-js', function() {
 gulp.task('build-html', function() {
     gulp.src('dist/**/*.html')
         .pipe(htmlReplace({
-            js: 'all.js'
+            js: 'js/all.js'
         }))
         .pipe(gulp.dest('dist'));
-})
+});
