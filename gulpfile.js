@@ -8,7 +8,7 @@ gulp.task('copy', ['clean'], function() {
 });
     
 gulp.task('clean', function() {
-    gulp.src('dist')
+    return gulp.src('dist')
         .pipe(clean());
 });
 
