@@ -46,12 +46,12 @@ gulp.task('server', function() {
             baseDir: 'src'
         }
     });
-    gulp.watch('src/**/*').on('change', function(event) {
+    gulp.watch('src/**/*.js').on('change', function(event) {
         gulp.src(event.path)
             .pipe(jshint())
             .pipe(jshint.reporter(jshintStylish));
     });
-    gulp.watch('src/**/*').on('change', function(event) {
+    gulp.watch('src/**/*.css').on('change', function(event) {
         gulp.src(event.path)
             .pipe(csslint())
             .pipe(csslint.reporter());
