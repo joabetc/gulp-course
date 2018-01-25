@@ -1,7 +1,10 @@
+import { request } from 'https';
+
 var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    htmlReplace = require('gulp-html-replace');
 
 gulp.task('copy', ['clean'], function() {
     return gulp.src('src/**/*')
@@ -24,3 +27,11 @@ gulp.task('build-js', function() {
         .pipe(concat('all.js'))
         .pipe('dist/js');
 });
+
+gulp.task('build-html', function() {
+    gulp.src('dist/**/*.html')
+        .pipe(htmlReplace({
+            js: 'all.js'
+        }))
+        .pipe(gulp.dest('dist'));
+})
