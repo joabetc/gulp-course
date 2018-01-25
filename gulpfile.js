@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     clean = require('gulp-clean');
 
-gulp.task('copy', function() {
+gulp.task('copy', ['clean'], function() {
     gulp.src('src/**/*')
         .pipe(gulp.dest('dist'));
 });
