@@ -30,7 +30,7 @@ gulp.task('build-js', function() {
             'dist/js/home.js', 
             'dist/js/produto.js'])
         .pipe(concat('all.js'))
-        .pipe('dist/js');
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('build-html', function() {
